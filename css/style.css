@@ -1,5 +1,110 @@
 
-/* SERVIÇOS */
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0B0D10;
+    color: #F3F5F7;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1A1A1A;
+    background-color: #69D3FF;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #9AE1FF;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   APRESENTAÇÃO PRINCIPAL
+========================= */
+
+main {
+    text-align: center;
+    padding: 40px;
+    margin: 40px;
+}
+
+main h1 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+main p {
+    text-transform: uppercase;
+    line-height: 1.7;
+}
+
+/* BOTÃO PRINCIPAL */
+
+main a {
+    display: inline-block;
+    background-color: #F3F5F7;
+    color: #0B0D10;
+    padding: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: transform 0.3s ease,
+                background-color 0.3s ease;
+}
+
+main a:hover {
+    transform: translateY(-4px);
+    background-color: #9AE1FF;
+}
+
+/* =========================
+   SEÇÃO DE SERVIÇOS
+========================= */
 
 #servicos {
     padding: 60px 30px;
@@ -17,7 +122,10 @@
     max-width: 600px;
     margin: 0 auto 40px;
     line-height: 1.7;
+    text-transform: none;
 }
+
+/* CONTAINER DOS CARDS */
 
 .servicos-container {
     display: flex;
@@ -27,8 +135,11 @@
     margin: 0 auto;
 }
 
+/* CARD INDIVIDUAL */
+
 .servico {
     flex: 1;
+    min-width: 0;
     background-color: #11151A;
     border: 1px solid #252C34;
     border-radius: 10px;
@@ -43,44 +154,136 @@
     border-color: #69D3FF;
 }
 
+/* NÚMERO DO SERVIÇO */
+
 .servico-numero {
     color: #69D3FF;
-    font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 600;
 }
 
+/* TÍTULO DO CARD */
+
 .servico h3 {
     font-size: 20px;
+    line-height: 1.4;
     margin: 20px 0 12px;
 }
+
+/* DESCRIÇÃO DO CARD */
 
 .servico p {
     color: #9AA3AD;
     font-size: 15px;
     line-height: 1.7;
     text-transform: none;
+    margin-bottom: 0;
 }
 
-/* TELAS MENORES */
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #9AA3AD;
+}
+
+/* =========================
+   TABLETS E CELULARES
+========================= */
 
 @media (max-width: 768px) {
-    .servicos-container {
+
+    header {
         flex-direction: column;
+        gap: 25px;
+        padding: 20px;
     }
 
-    .servico {
-        box-sizing: border-box;
-        width: 100%;
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 9px;
+    }
+
+    main {
+        padding: 20px 10px;
+        margin: 30px 10px;
+    }
+
+    main h1 {
+        font-size: 32px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+
+    main a {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    #servicos {
+        padding: 40px 15px;
+        margin: 20px 0;
     }
 
     #servicos h2 {
         font-size: 26px;
     }
 
-    #servicos {
-        padding: 40px 15px;
+    .servicos-container {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .servico {
+        width: 100%;
+        padding: 25px;
     }
 }
 
-   
+/* =========================
+   CELULARES PEQUENOS
+========================= */
+
+@media (max-width: 380px) {
+
+    main h1 {
+        font-size: 27px;
+    }
+
+    #servicos h2 {
+        font-size: 23px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+}
+
+/* =========================
+   ACESSIBILIDADE
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
