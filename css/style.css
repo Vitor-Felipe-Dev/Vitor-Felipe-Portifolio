@@ -82,8 +82,22 @@ nav a:hover {
     color: #69D3FF;
 }
 
-img{
-  width: 100%;
+/* LINK DA LOGO */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* IMAGEM DA LOGO */
+
+.logo {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* =========================
@@ -400,5 +414,27 @@ footer p {
 
     footer {
         margin-top: 30px;
+    }
+
+
+
+    header {
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+        padding: 14px 18px;
+    }
+
+    .logo {
+        width: 230px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 13px;
     }
 }
